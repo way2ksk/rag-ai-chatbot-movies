@@ -38,19 +38,10 @@ if os.path.exists(faiss_index_path):
     vector_db = FAISS.load_local(faiss_index_path, embeddings,allow_dangerous_deserialization=True)
 else:
     docs = chunk_data(movies)
-    # Ensure 'docs' has no empty or invalid data
-    docs = [doc for doc in docs if doc.strip()]
-    if not docs:
-        raise ValueError("No valid documents to embed.")
+    vector_db = FAISS.from_documents(docs, embeddings)
+    vector_db.save_local(faiss_index_path)
+    print("FAISS index created and saved locally.")
 
-    # Check and preprocess docs before passing to FAISS
-    try:
-        vector_db = FAISS.from_documents(docs, embeddings)
-        vector_db.save_local(faiss_index_path)
-        print("FAISS index created and saved locally.")
-    except Exception as e:
-        print(f"Error during FAISS processing: {e}")
-        raise
 
 
 # Initialize Flask app
