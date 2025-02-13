@@ -28,14 +28,14 @@ Store your **OpenAI API Key** in OPENAI_API_Key.txt:
 
 ### 4. Run the Flask Backend
 ```sh
-python app.py
+python src/app.py
 ```
 This will start the Flask API on **http://127.0.0.1:5000**
 
 ### 5. Run the Streamlit Frontend
 Open another terminal and run:
 ```sh
-streamlit run streamlit_app.py
+streamlit run src/streamlit_app.py
 ```
 This will launch the **Streamlit UI** where users can interact with the AI assistant.
 
