@@ -3,6 +3,8 @@
 ## Project Overview
 This project implements a **Retrieval-Augmented Generation (RAG) system** using **LangChain**, **FAISS**, and **OpenAI**. The dataset (movies.csv) is converted into chunks and stored in a **vector database**. When a user queries, the system retrieves the top 5 relevant movies and generates a response using OpenAI's language model.
 
+- **github**: https://github.com/way2ksk/rag-ai-chatbot-movies
+
 ## Tech Stack
 - **Backend**: Flask (REST API for handling queries)
 - **Frontend**: Streamlit (UI for user interaction)
